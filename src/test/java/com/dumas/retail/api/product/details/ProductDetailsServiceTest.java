@@ -1,5 +1,6 @@
 package com.dumas.retail.api.product.details;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doReturn;
@@ -25,9 +26,10 @@ public class ProductDetailsServiceTest {
 
 	@Test
 	public void test_retrieveNewProductDetails() {
-		//doReturn("redSky").when(redSkyClient).retrieveProductName();
+		doReturn(ProductDetailsConstants.PRODUCT_NAME).when(redSkyClient).retrieveProductName();
 		ProductDetails productDetails = productDetailsService.retrieveProductDetails(ProductDetailsConstants.PRODUCT_ID);
 		assertNotNull(productDetails);
+		assertEquals(ProductDetailsConstants.PRODUCT_NAME, productDetails.getName());
 	}
 	
 	@Test

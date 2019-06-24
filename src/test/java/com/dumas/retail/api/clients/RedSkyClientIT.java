@@ -9,11 +9,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.dumas.retail.api.ApplicationTests;
 import com.dumas.retail.api.client.RedSkyClient;
+import com.dumas.retail.api.product.details.ProductDetailsConstants;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 public class RedSkyClientIT extends ApplicationTests {
-	
-	private static final String PRODUCT_NAME = "The Big Lebowski (Blu-ray)";
 	
 	@Autowired
 	private RedSkyClient redSkyClient;
@@ -21,6 +20,6 @@ public class RedSkyClientIT extends ApplicationTests {
 	@Test
 	public void test_retrieveProductName() {
 		String productName = redSkyClient.retrieveProductName();
-		assertEquals(PRODUCT_NAME, productName);
+		assertEquals(ProductDetailsConstants.PRODUCT_NAME, productName);
 	}
 }
