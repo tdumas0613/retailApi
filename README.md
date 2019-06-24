@@ -13,3 +13,5 @@ To Run project locally:
 - Run "mvn clean package" to create runnable artifact
 - Navigate to target folder within project structure and run command "java -jar retail.api-0.0.1-SNAPSHOT.jar"
   - OR Run "java -jar target/retail.api-0.0.1-SNAPSHOT.jar" from base project folder
+- Project can also be ran from IDE by running "MyRetailApplication.java" as a Java Project
+- Can run in debug mode if desired
