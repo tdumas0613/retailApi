@@ -1,4 +1,4 @@
-package com.dumas.retail.api.clients;
+package com.dumas.retail.api.client.pojos;
 
 public class ProductDescription {
 	

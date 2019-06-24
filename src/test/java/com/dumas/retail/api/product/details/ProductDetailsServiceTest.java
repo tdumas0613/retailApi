@@ -10,7 +10,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import com.dumas.retail.api.clients.RedSkyClient;
+import com.dumas.retail.api.client.RedSkyClient;
 import com.dumas.retail.api.pojos.CurrentPrice;
 import com.dumas.retail.api.pojos.ProductDetails;
 
@@ -25,7 +25,7 @@ public class ProductDetailsServiceTest {
 
 	@Test
 	public void test_retrieveNewProductDetails() {
-		doReturn("redSky").when(redSkyClient).retrieveProductName();
+		//doReturn("redSky").when(redSkyClient).retrieveProductName();
 		ProductDetails productDetails = productDetailsService.retrieveProductDetails(ProductDetailsConstants.PRODUCT_ID);
 		assertNotNull(productDetails);
 	}

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.dumas.retail.api.ApplicationTests;
+import com.dumas.retail.api.client.RedSkyClient;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 public class RedSkyClientIT extends ApplicationTests {

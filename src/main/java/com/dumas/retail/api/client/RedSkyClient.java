@@ -1,7 +1,9 @@
-package com.dumas.retail.api.clients;
+package com.dumas.retail.api.client;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import com.dumas.retail.api.client.pojos.RedSkyProduct;
 
 @Service
 public class RedSkyClient {
