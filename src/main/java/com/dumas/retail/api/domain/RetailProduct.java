@@ -1,18 +1,21 @@
 package com.dumas.retail.api.domain;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("retail_products")
 public class RetailProduct {
 	
-	private long id;
+	@Id
+	private String id;
 	private double price;
 	private String name;
+	private String currencyCode;
 	
-	public long getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public double getPrice() {
@@ -26,6 +29,12 @@ public class RetailProduct {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getCurrencyCode() {
+		return currencyCode;
+	}
+	public void setCurrencyCode(String currencyCode) {
+		this.currencyCode = currencyCode;
 	}
 	@Override
     public String toString() {

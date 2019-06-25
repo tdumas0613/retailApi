@@ -16,7 +16,7 @@ public class ProductDetailsController {
 	private ProductDetailsService productDetailsService;
 	
 	@RequestMapping(value = "/details", params = {"id"}, method = RequestMethod.GET)
-	public ProductDetails retrieveProductDetails(@RequestParam(value = "id") long id) {
+	public ProductDetails retrieveProductDetails(@RequestParam(value = "id") String id) {
 		return productDetailsService.retrieveProductDetails(id);
 	}
 }
