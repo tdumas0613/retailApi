@@ -15,7 +15,7 @@ public class ProductDetailsController {
 	@Autowired
 	private ProductDetailsService productDetailsService;
 	
-	@RequestMapping(value = "/details", method = RequestMethod.GET)
+	@RequestMapping(value="/details", method = RequestMethod.GET)
 	public ProductDetails retrieveProductDetails(@RequestParam(value = "id") String productId) {
 		return productDetailsService.retrieveProductDetails(productId);
 	}
