@@ -31,12 +31,9 @@ public class ProductDetailsService {
 	protected CurrentPrice establishCurrentPrice(Integer productId) {
 		Optional<RetailProduct> retailProduct = retailProductRepository.findByProductId(productId);
 		boolean isRetailProductPresent = retailProduct.isPresent();
-		
 		CurrentPrice currentPrice = new CurrentPrice();
-		Double price = isRetailProductPresent ? retailProduct.get().getPrice() : null;
-		String currencyCode = isRetailProductPresent ? retailProduct.get().getCurrencyCode() : null;
-		currentPrice.setValue(price);
-		currentPrice.setCurrencyCode(currencyCode);
+		currentPrice.setValue(isRetailProductPresent ? retailProduct.get().getPrice() : null);
+		currentPrice.setCurrencyCode(isRetailProductPresent ? retailProduct.get().getCurrencyCode() : null);
 		return currentPrice;
 	}
 }
