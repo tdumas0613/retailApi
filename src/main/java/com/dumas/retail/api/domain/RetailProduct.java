@@ -1,16 +1,18 @@
 package com.dumas.retail.api.domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "retail_products")
 public class RetailProduct {
 	
 	@Id
 	private String productId;
-	private double price;
+	private Double price;
 	private String name;
 	private String currencyCode;
 	
-	public RetailProduct(String productId, double price, String name, String currencyCode) {
+	public RetailProduct(String productId, Double price, String name, String currencyCode) {
 		super();
 		this.productId = productId;
 		this.price = price;
@@ -23,10 +25,10 @@ public class RetailProduct {
 	public void setProductId(String productId) {
 		this.productId = productId;
 	}
-	public double getPrice() {
+	public Double getPrice() {
 		return price;
 	}
-	public void setPrice(double price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 	public String getName() {

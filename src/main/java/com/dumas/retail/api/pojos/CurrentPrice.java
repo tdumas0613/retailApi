@@ -4,14 +4,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CurrentPrice {
 	
-	private double value;
+	private Double value;
 	@JsonProperty("currency_code")
 	private String currencyCode;
 	
-	public double getValue() {
+	public Double getValue() {
 		return value;
 	}
-	public void setValue(double value) {
+	public void setValue(Double value) {
 		this.value = value;
 	}
 	public String getCurrencyCode() {
