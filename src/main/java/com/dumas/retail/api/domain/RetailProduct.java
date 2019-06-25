@@ -7,22 +7,22 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class RetailProduct {
 	
 	@Id
-	private String productId;
+	private Integer productId;
 	private Double price;
 	private String name;
 	private String currencyCode;
 	
-	public RetailProduct(String productId, Double price, String name, String currencyCode) {
+	public RetailProduct(Integer productId, Double price, String name, String currencyCode) {
 		super();
 		this.productId = productId;
 		this.price = price;
 		this.name = name;
 		this.currencyCode = currencyCode;
 	}
-	public String getProductId() {
+	public Integer getProductId() {
 		return productId;
 	}
-	public void setProductId(String productId) {
+	public void setProductId(Integer productId) {
 		this.productId = productId;
 	}
 	public Double getPrice() {

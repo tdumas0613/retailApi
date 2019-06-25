@@ -34,8 +34,8 @@ public class ProductDetailsServiceTest {
 	@Before
 	public void setUp() {
 		doReturn(ProductDetailsConstants.PRODUCT_NAME).when(redSkyClient).retrieveProductName();
-		doReturn(Optional.of(new RetailProduct(ProductDetailsConstants.PRODUCT_ID, ProductDetailsConstants.PRICE,
-				ProductDetailsConstants.PRODUCT_NAME, ProductDetailsConstants.CURRENCY_CODE))).when(retailProductRepository).findByProductId(any(String.class));
+		doReturn(Optional.of(new RetailProduct(Integer.valueOf(ProductDetailsConstants.PRODUCT_ID), ProductDetailsConstants.PRICE,
+				ProductDetailsConstants.PRODUCT_NAME, ProductDetailsConstants.CURRENCY_CODE))).when(retailProductRepository).findByProductId(any(Integer.class));
 	}
 
 	@Test

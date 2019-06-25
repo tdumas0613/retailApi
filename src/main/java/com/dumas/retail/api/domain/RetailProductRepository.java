@@ -4,8 +4,8 @@ import java.util.Optional;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface RetailProductRepository extends MongoRepository<RetailProduct, String> {
+public interface RetailProductRepository extends MongoRepository<RetailProduct, Integer> {
 
-    public Optional<RetailProduct> findByProductId(String productId);
+    public Optional<RetailProduct> findByProductId(Integer productId);
 
 }

@@ -24,13 +24,12 @@ public class ProductDetailsService {
 		ProductDetails productDetails = new ProductDetails();
 		productDetails.setId(productId);
 		productDetails.setName(redSkyClient.retrieveProductName());
-		productDetails.setCurrentPrice(establishCurrentPrice(productId));
+		productDetails.setCurrentPrice(establishCurrentPrice(Integer.valueOf(productId)));
 		return productDetails;
 	}
 	
-	protected CurrentPrice establishCurrentPrice(String productId) {
-		
-		Optional<RetailProduct> retailProduct = retailProductRepository.findByProductId("123");
+	protected CurrentPrice establishCurrentPrice(Integer productId) {
+		Optional<RetailProduct> retailProduct = retailProductRepository.findByProductId(productId);
 		boolean isRetailProductPresent = retailProduct.isPresent();
 		
 		CurrentPrice currentPrice = new CurrentPrice();

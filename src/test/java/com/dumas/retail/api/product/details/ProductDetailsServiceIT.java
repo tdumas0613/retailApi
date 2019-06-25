@@ -18,7 +18,7 @@ public class ProductDetailsServiceIT extends ApplicationTests {
 	@Autowired
 	private ProductDetailsService productDetailsService;
 	
-	private static final String PRODUCT_ID = "123";
+	private static final String PRODUCT_ID = "15117729";
 	
 	@Test
 	public void test_retrieveNewProductDetails() {
@@ -30,7 +30,7 @@ public class ProductDetailsServiceIT extends ApplicationTests {
 	
 	@Test
 	public void test_establishCurrentPrice() {
-		CurrentPrice currentPrice = productDetailsService.establishCurrentPrice(ProductDetailsConstants.PRODUCT_ID);
+		CurrentPrice currentPrice = productDetailsService.establishCurrentPrice(Integer.valueOf(ProductDetailsConstants.PRODUCT_ID));
 		assertNotNull(currentPrice.getValue());
 		assertNotNull(currentPrice.getCurrencyCode());
 	}
