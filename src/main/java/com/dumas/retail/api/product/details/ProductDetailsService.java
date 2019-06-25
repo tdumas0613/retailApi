@@ -19,6 +19,28 @@ public class ProductDetailsService {
 	
 	@Autowired
 	private RetailProductRepository retailProductRepository;
+	
+	public RetailProduct updateProductPrice(Integer productId, ProductDetails productDetails) {
+		Integer productDetailsPrice = Integer.valueOf(productDetails.getId());
+		if(productId.equals(productDetailsPrice)) {
+			Optional<RetailProduct> optionalMatchingRetailProduct = retailProductRepository.findByProductId(productDetailsPrice);
+			return updateRetailProductPrice(productDetails, optionalMatchingRetailProduct);
+		} else {
+			throw new RuntimeException("Error - URI Product id does not match Request Body Product id. "
+					+ "Please adjust your inputs and try again.");
+		}
+	}
+
+	private RetailProduct updateRetailProductPrice(ProductDetails productDetails,
+			Optional<RetailProduct> optionalMatchingRetailProduct) {
+		if(optionalMatchingRetailProduct.isPresent()) {
+			RetailProduct matchingRetailProduct = optionalMatchingRetailProduct.get();
+			matchingRetailProduct.setPrice(productDetails.getCurrentPrice().getValue());
+			return retailProductRepository.save(matchingRetailProduct);
+		} else {
+			throw new RuntimeException("Failed to retrieve matching product from database");
+		}
+	}
 
 	public ProductDetails retrieveProductDetails(String productId) {
 		ProductDetails productDetails = new ProductDetails();

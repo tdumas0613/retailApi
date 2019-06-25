@@ -7,5 +7,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 public interface RetailProductRepository extends MongoRepository<RetailProduct, Integer> {
 
     public Optional<RetailProduct> findByProductId(Integer productId);
+    public RetailProduct save(RetailProduct retailProduct);
 
 }
