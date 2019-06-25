@@ -21,9 +21,9 @@ public class ProductDetailsService {
 	private RetailProductRepository retailProductRepository;
 	
 	public RetailProduct updateProductPrice(Integer productId, ProductDetails productDetails) {
-		Integer productDetailsPrice = Integer.valueOf(productDetails.getId());
-		if(productId.equals(productDetailsPrice)) {
-			Optional<RetailProduct> optionalMatchingRetailProduct = retailProductRepository.findByProductId(productDetailsPrice);
+		Integer productDetailsId = Integer.valueOf(productDetails.getId());
+		if(productId.equals(productDetailsId)) {
+			Optional<RetailProduct> optionalMatchingRetailProduct = retailProductRepository.findByProductId(productDetailsId);
 			return updateRetailProductPrice(productDetails, optionalMatchingRetailProduct);
 		} else {
 			throw new RuntimeException("Error - URI Product id does not match Request Body Product id. "
