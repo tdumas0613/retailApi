@@ -18,11 +18,9 @@ public class ProductDetailsServiceIT extends ApplicationTests {
 	@Autowired
 	private ProductDetailsService productDetailsService;
 	
-	private static final String PRODUCT_ID = "15117729";
-	
 	@Test
 	public void test_retrieveNewProductDetails() {
-		ProductDetails productDetails = productDetailsService.retrieveProductDetails(PRODUCT_ID);
+		ProductDetails productDetails = productDetailsService.retrieveProductDetails(ProductDetailsConstants.PRODUCT_ID);
 		assertEquals(ProductDetailsConstants.PRODUCT_ID, productDetails.getId());
 		assertEquals(ProductDetailsConstants.PRODUCT_NAME, productDetails.getName());
 		assertNotNull(productDetails.getCurrentPrice());
