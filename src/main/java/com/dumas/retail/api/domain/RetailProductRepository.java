@@ -6,6 +6,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface RetailProductRepository extends MongoRepository<RetailProduct, String> {
 
-    public Optional<RetailProduct> findById(String id);
+    public Optional<RetailProduct> findByProductId(String productId);
 
 }

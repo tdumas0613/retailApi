@@ -1,22 +1,27 @@
 package com.dumas.retail.api.domain;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document("retail_products")
 public class RetailProduct {
 	
 	@Id
-	private String id;
+	private String productId;
 	private double price;
 	private String name;
 	private String currencyCode;
 	
-	public String getId() {
-		return id;
+	public RetailProduct(String productId, double price, String name, String currencyCode) {
+		super();
+		this.productId = productId;
+		this.price = price;
+		this.name = name;
+		this.currencyCode = currencyCode;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public String getProductId() {
+		return productId;
+	}
+	public void setProductId(String productId) {
+		this.productId = productId;
 	}
 	public double getPrice() {
 		return price;
@@ -40,6 +45,6 @@ public class RetailProduct {
     public String toString() {
         return String.format(
                 "RetailProduct[id=%s, price='%s', name='%s']",
-                id, price, name);
+                productId, price, name);
     }
 }

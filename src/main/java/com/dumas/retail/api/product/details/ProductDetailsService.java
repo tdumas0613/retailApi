@@ -20,19 +20,24 @@ public class ProductDetailsService {
 	@Autowired
 	private RetailProductRepository retailProductRepository;
 
-	public ProductDetails retrieveProductDetails(String id) {
+	public ProductDetails retrieveProductDetails(String productId) {
+		
 		ProductDetails productDetails = new ProductDetails();
-		productDetails.setId(id);
+		productDetails.setId(productId);
 		productDetails.setName(redSkyClient.retrieveProductName());
 		
-		Optional<RetailProduct> retailProduct = retailProductRepository.findById("123");
+		productDetails.setCurrentPrice(establishCurrentPrice(productId));
+		return productDetails;
+	}
+	
+	protected CurrentPrice establishCurrentPrice(String productId) {
+		
+		Optional<RetailProduct> retailProduct = retailProductRepository.findByProductId("123");
 		boolean isRetailProductPresent = retailProduct.isPresent();
 		
 		CurrentPrice currentPrice = new CurrentPrice();
-		currentPrice.setValue(isRetailProductPresent ? retailProduct.get().getPrice() : 0.01);
-		currentPrice.setCurrencyCode(isRetailProductPresent ? retailProduct.get().getCurrencyCode() : "CAD");
-		
-		productDetails.setCurrentPrice(currentPrice);
-		return productDetails;
+		currentPrice.setValue(isRetailProductPresent ? retailProduct.get().getPrice() : null);
+		currentPrice.setCurrencyCode(isRetailProductPresent ? retailProduct.get().getCurrencyCode() : null);
+		return currentPrice;
 	}
 }
