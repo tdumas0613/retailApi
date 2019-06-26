@@ -26,6 +26,6 @@ To Run project locally:
 - Can run in debug mode if desired
 
 Link To PostMan Collection for hitting project locally:
-https://www.getpostman.com/collections/da8ecb2e86fb5e346262
+https://www.getpostman.com/collections/3baa3c28017e1b8b8319
 
 Project tests can be ran from IDE by running any test in the src/test package. May also invoke "mvn clean package" to run tests
