@@ -17,7 +17,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 import com.dumas.retail.api.client.RedSkyClient;
 import com.dumas.retail.api.domain.RetailProduct;
 import com.dumas.retail.api.domain.RetailProductRepository;
-import com.dumas.retail.api.pojos.CurrentPrice;
 import com.dumas.retail.api.pojos.ProductDetails;
 
 @RunWith(MockitoJUnitRunner.class)
