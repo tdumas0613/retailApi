@@ -50,11 +50,12 @@ public class ProductDetailsService {
 	}
 	
 	protected CurrentPrice establishCurrentPrice(Integer productId) {
-		Optional<RetailProduct> retailProduct = retailProductRepository.findByProductId(productId);
-		boolean isRetailProductPresent = retailProduct.isPresent();
+		Optional<RetailProduct> optionalRetailProduct = retailProductRepository.findByProductId(productId);
+		boolean isRetailProductPresent = optionalRetailProduct.isPresent();
+		RetailProduct retailProduct = optionalRetailProduct.get();
 		CurrentPrice currentPrice = new CurrentPrice();
-		currentPrice.setValue(isRetailProductPresent ? retailProduct.get().getPrice() : null);
-		currentPrice.setCurrencyCode(isRetailProductPresent ? retailProduct.get().getCurrencyCode() : null);
+		currentPrice.setValue(isRetailProductPresent ? retailProduct.getPrice() : null);
+		currentPrice.setCurrencyCode(isRetailProductPresent ? retailProduct.getCurrencyCode() : null);
 		return currentPrice;
 	}
 }
