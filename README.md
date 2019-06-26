@@ -6,10 +6,10 @@ Dependencies Required to run Project:
 - MongoDB (Minimum version 4.0.10)
   - Must have a running Mongo Database named "retail" with a colletion named retail_products and at least one document with the following json structure:
   {
-	"_id" : <Integer>,
-	"price" : <Double>,
-	"name" : <String>,
-	"currencyCode" : <String>,
+	"_id" : Integer,
+	"price" : Double,
+	"name" : String,
+	"currencyCode" : String,
 	"_class" : com.dumas.retail.api.domain.RetailProduct
 }
   - NOTE: RetailProduct class can be found in Java project
