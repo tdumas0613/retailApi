@@ -31,8 +31,7 @@ public class ProductDetailsService {
 		}
 	}
 
-	private RetailProduct updateRetailProductPrice(ProductDetails productDetails,
-			Optional<RetailProduct> optionalMatchingRetailProduct) {
+	protected RetailProduct updateRetailProductPrice(ProductDetails productDetails, Optional<RetailProduct> optionalMatchingRetailProduct) {
 		if(optionalMatchingRetailProduct.isPresent()) {
 			RetailProduct matchingRetailProduct = optionalMatchingRetailProduct.get();
 			matchingRetailProduct.setPrice(productDetails.getCurrentPrice().getValue());
